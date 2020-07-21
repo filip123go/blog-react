@@ -1,11 +1,11 @@
 import React from "react";
 import {connect} from "react-redux" // we need this to wire our action Creators to Components
-import {fetchPosts} from "../actions";
+import {fetchPostsAndUsers} from "../actions";
 import UserHeader from "./UserHeader";
 
 class PostList extends React.Component {
     componentDidMount() {
-        this.props.fetchPosts(); //the fetchPosts exist in props because we wire it below on the connect function
+        this.props.fetchPostsAndUsers(); //the fetchPostsAndUsers exist in props because we wire it below on the connect function
     }
 
     //render the list of posts to the screen
@@ -40,5 +40,5 @@ const mapStateToProps = (state) => {
 
 export default connect(
     mapStateToProps,
-    {fetchPosts}
+    {fetchPostsAndUsers}
 )(PostList);
